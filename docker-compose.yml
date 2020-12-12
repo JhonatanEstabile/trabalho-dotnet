@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  dotnet-postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: dotnet
+      POSTGRES_INITDB_ARGS: --data-checksums
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "15432:5432"
+    volumes:
+      - /home/jhonatan/Vídeos/dotnet_aula/aula2/postgres:/var/lib/postgresql/data

@@ -12,6 +12,14 @@ namespace ProjBiblio.Domain.Entities
 
         public string Foto { get; set; }
 
+        public int Ano { get; set; }
+
+        public int Edicao { get; set; }
+
+        public int Paginas { get; set; }
+
+        public string Editora { get; set; }
+
         public ICollection<LivroAutor> LivAutor { get; set; }
 
         public ICollection<LivroEmprestimo> LivEmprestimo { get; set; }
