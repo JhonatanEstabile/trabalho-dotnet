@@ -8,6 +8,8 @@ namespace ProjBiblio.Application.ViewModels
 
         public int LivroID { get; set; }
 
+        public string Descricao { get; set; }
+
         public string DataInicio { get; set; }
 
         public string DataFim { get; set; }

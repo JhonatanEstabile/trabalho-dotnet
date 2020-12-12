@@ -22,6 +22,8 @@ namespace ProjBiblio.Application.InputModels
 
         public string Editora { get; set; }
 
+        public int GeneroID { get; set;}
+
         public IList<AutorSelectListDto> Autores { get; set; }
     }
 
@@ -31,6 +33,9 @@ namespace ProjBiblio.Application.InputModels
         {
             RuleFor(x => x.Titulo).NotEmpty().WithMessage("O Nome é obrigatório.")
                 .Length(0, 100).WithMessage("O Nome não pode exceder 100 caracteres.");
+
+            RuleFor(x => x.GeneroID).NotEmpty().WithMessage("O GeneroID é obrigatório.")
+                 .GreaterThanOrEqualTo(0).WithMessage("GeneroID não pode ser negativo.");
 
             RuleFor(x => x.Quantidade)
                 .GreaterThanOrEqualTo(0).WithMessage("A quantidade não pode ter valor negativo.");

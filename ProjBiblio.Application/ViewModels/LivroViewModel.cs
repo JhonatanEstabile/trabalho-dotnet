@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using ProjBiblio.Application.DTOs;
+using ProjBiblio.Domain.Entities;
 
 namespace ProjBiblio.Application.ViewModels
 {
@@ -22,5 +23,7 @@ namespace ProjBiblio.Application.ViewModels
         public string Editora { get; set; }
 
         public IList<AutorSelectListDto> Autores { get; set; }
+
+        public Genero Genero { get; set; }
     }
 }

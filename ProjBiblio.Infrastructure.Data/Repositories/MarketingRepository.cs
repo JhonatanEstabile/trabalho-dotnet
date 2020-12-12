@@ -12,5 +12,14 @@ namespace ProjBiblio.Infrastructure.Data.Repositories
         public MarketingRepository(BibliotecaDbContext context) : base(context)
         {
         }
+
+        public Marketing GetMarketingInclude(int marketingId)
+        {
+            return (_context.Marketing
+                .Include(e => e.LivMarketing)
+                .ThenInclude(e => e.Livro)
+                .Where(l => l.MarketingID == marketingId))
+                .SingleOrDefault();
+        }
     }
 }

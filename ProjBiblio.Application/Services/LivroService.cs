@@ -33,7 +33,8 @@ namespace ProjBiblio.Application.Services
 
         public LivroViewModel Get(int id)
         {
-            var livro = this._uow.LivroRepository.GetById(a => a.LivroID == id);
+            // var livro = this._uow.LivroRepository.GetById(a => a.LivroID == id);
+            var livro = this._uow.LivroRepository.GetLivroInclude(id);
             return _mapper.Map<LivroViewModel>(livro);
         }
 

@@ -33,7 +33,7 @@ namespace ProjBiblio.Application.Services
 
         public MarketingViewModel Get(int id)
         {
-            var marketing = this._uow.MarketingRepository.GetById(a => a.MarketingID == id);
+            var marketing = this._uow.MarketingRepository.GetMarketingInclude(id);
 
             return _mapper.Map<MarketingViewModel>(marketing);
         }

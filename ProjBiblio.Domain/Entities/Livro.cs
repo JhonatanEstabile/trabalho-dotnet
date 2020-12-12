@@ -20,6 +20,10 @@ namespace ProjBiblio.Domain.Entities
 
         public string Editora { get; set; }
 
+        public int? GeneroID { get; set; }
+
+        public virtual Genero Genero { get; set; }
+
         public ICollection<LivroAutor> LivAutor { get; set; }
 
         public ICollection<LivroEmprestimo> LivEmprestimo { get; set; }

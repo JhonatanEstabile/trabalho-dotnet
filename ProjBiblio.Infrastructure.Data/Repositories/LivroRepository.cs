@@ -16,6 +16,14 @@ namespace ProjBiblio.Infrastructure.Data.Repositories
             
         }
 
+        public Livro GetLivroInclude(int livroId)
+        {
+            return (_context.Livro
+                .Include(e => e.Genero)
+                .Where(l => l.LivroID == livroId))
+                .SingleOrDefault();
+        }
+
         public IEnumerable<Livro> GetLivrosPorAutor(int autorID)
         {
             return _context.Livro

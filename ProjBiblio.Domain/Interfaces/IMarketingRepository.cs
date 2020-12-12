@@ -5,5 +5,6 @@ namespace ProjBiblio.Domain.Interfaces
 {
     public interface IMarketingRepository  : IRepository<Marketing>
     {
+        Marketing GetMarketingInclude(int marketingId);
     }
 }
